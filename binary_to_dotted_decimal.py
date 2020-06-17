@@ -16,7 +16,8 @@ def to_decimal(binary:str):
     for ss in new_binary:
         if len(dotted_string) == 0:
             dotted_string = dotted_string + str(ss)
-        dotted_string = dotted_string + '.' + str(ss)
+        else:
+            dotted_string = dotted_string + '.' + str(ss)
     
     return print(dotted_string)
 
