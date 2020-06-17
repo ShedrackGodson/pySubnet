@@ -5,10 +5,12 @@ def to_binary(decimal_value):
     result_decimals_list = []
     for value in new_decimal:
         try:
-            new_value = bin(int(value))
-            new_value = new_value.replace('b', '')
-        except Exception as e:
-            return "No Binary With Leading 0"
+            if value[0] == '0':
+                return print("No Decimal With Leading 0\nYou entered:- ",value)
+        except Exception:
+            return print("IP address has missing values. Enter a valid IP address.")
+        new_value = bin(int(value))
+        new_value = new_value.replace('b', '')
 
         if len(new_value) < 8:
             for i in new_value:
@@ -39,4 +41,4 @@ def to_binary(decimal_value):
 
     return print(result_decimals)
 
-to_binary('129.011.11.239')
+to_binary('129.11.113.239')
