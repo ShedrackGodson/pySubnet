@@ -4,8 +4,11 @@ def to_binary(decimal_value):
     value_list = []
     result_decimals_list = []
     for value in new_decimal:
-        new_value = bin(int(value))
-        new_value = new_value.replace('b', '')
+        try:
+            new_value = bin(int(value))
+            new_value = new_value.replace('b', '')
+        except Exception as e:
+            return "No Binary With Leading 0"
 
         if len(new_value) < 8:
             for i in new_value:
@@ -16,23 +19,24 @@ def to_binary(decimal_value):
             value_list = value_list.replace(',', '')
             result_decimals_list.append(value_list)
             value_list = []
-        # elif len(new_value) > 8:
-        #     for i in range(8-len())
         else:
             result_decimals_list.append(new_value)
 
-        
-    # Checking if the length of any list element exceed 8 
-    final_list = []
-    for y in result_decimals_list:
-        if len(y) == 9:
-            z = y.replace(y[0], '')
-            final_list.append(z)
-        else:
-            final_list.append(y)
+    print(result_decimals_list)
+    # final_decimals = []
+    # final_values = []
+    # for ss in result_decimals_list:
+    #     if len(ss) == 9:
+    #         for values in ss:
+    #             final_values.append(values)
 
-    result_decimals = ' '.join(final_list)
+    #     final_values.pop(0)
+    #     final_values = ''.join(final_values)
+    #     print(final_values)
+        # final_values = []
     
+    result_decimals = ' '.join(result_decimals_list)
+
     return print(result_decimals)
 
-to_binary('129.11.11.239')
+to_binary('129.011.11.239')
