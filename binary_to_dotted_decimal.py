@@ -5,12 +5,12 @@ def to_binary(decimal_value):
     result_decimals_list = []
     for value in new_decimal:
         try:
-            if value[0] == '0':
-                return print("No Decimal With Leading 0\nYou entered:- ",value)
+            if value[0] == '0' and len(value) > 1:
+                return print("No Decimal With Leading 0\nYou entered:-",value)
         except Exception:
             return print("IP address has missing values. Enter a valid IP address.")
         if len(value) > 3:
-            return print("No Dotted-Decimal IP address with {} values\nYou entered:- {}".format(len(value), value))
+            return print("No Dotted-Decimal IP address with {} values\nYou entered:-{}".format(len(value), value))
         new_value = bin(int(value))
         new_value = new_value.replace('b', '')
 
@@ -26,21 +26,21 @@ def to_binary(decimal_value):
         else:
             result_decimals_list.append(new_value)
 
-    print(result_decimals_list)
-    # final_decimals = []
-    # final_values = []
-    # for ss in result_decimals_list:
-    #     if len(ss) == 9:
-    #         for values in ss:
-    #             final_values.append(values)
+    final_values = []
+    final_decimals = []
 
-    #     final_values.pop(0)
-    #     final_values = ''.join(final_values)
-    #     print(final_values)
-        # final_values = []
-    
-    result_decimals = ' '.join(result_decimals_list)
+    for ss in result_decimals_list:
+        if ss[1] and len(ss) == 9:
+            for yy in ss:
+                final_values.append(yy)
+            final_values.pop(0)
+            final_values = ''.join(final_values)
+            final_decimals.append(final_values)
+            final_values = []
+        else:
+            final_decimals.append(ss)
+    result_decimals = ' '.join(final_decimals)
 
     return print(result_decimals)
 
-to_binary('128.181.113.239')
+to_binary('255.255.255.0')
