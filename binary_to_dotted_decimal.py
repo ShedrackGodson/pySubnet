@@ -20,9 +20,19 @@ def to_binary(decimal_value):
         #     for i in range(8-len())
         else:
             result_decimals_list.append(new_value)
-    
-    result_decimals = ' '.join(result_decimals_list)
 
+        
+    # Checking if the length of any list element exceed 8 
+    final_list = []
+    for y in result_decimals_list:
+        if len(y) == 9:
+            z = y.replace(y[0], '')
+            final_list.append(z)
+        else:
+            final_list.append(y)
+
+    result_decimals = ' '.join(final_list)
+    
     return print(result_decimals)
 
 to_binary('129.11.11.239')
