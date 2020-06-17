@@ -9,6 +9,8 @@ def to_binary(decimal_value):
                 return print("No Decimal With Leading 0\nYou entered:- ",value)
         except Exception:
             return print("IP address has missing values. Enter a valid IP address.")
+        if len(value) > 3:
+            return print("No Dotted-Decimal IP address with {} values\nYou entered:- {}".format(len(value), value))
         new_value = bin(int(value))
         new_value = new_value.replace('b', '')
 
@@ -41,4 +43,4 @@ def to_binary(decimal_value):
 
     return print(result_decimals)
 
-to_binary('129.11.113.239')
+to_binary('128.181.113.239')
