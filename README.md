@@ -1,7 +1,7 @@
 # pySubnet
 
 ## Introduction
-This project provides basic conversions needed in order to simplify working with your router for routing IP, binary to dotted decimals conversions and vice versa, dotted decimals
+This project provides basic conversions needed in order to simplify working with IP addresses conversions, binary to dotted decimals conversions and vice versa, dotted decimals
 to hexadecimals and vice versa, binary to hexadecimals and vice versa.
 
 ## Aim
