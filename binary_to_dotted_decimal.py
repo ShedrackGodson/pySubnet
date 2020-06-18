@@ -19,7 +19,7 @@ def to_decimal(binary:str):
         else:
             dotted_string = dotted_string + '.' + str(ss)
     
-    return print(dotted_string)
+    return dotted_string
 
 
-to_decimal('10011110 10000000 00000001 01101100')
+# to_decimal('00010111 00000000 00000000 00000000')

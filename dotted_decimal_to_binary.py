@@ -1,5 +1,5 @@
 # A function to convert dotted decimal value to binary value
-def to_binary(decimal_value):
+def to_binary(decimal_value: str):
     """ Returns Binary format of the decimal value param """
     new_decimal = decimal_value.split('.')
     value_list = []
@@ -49,6 +49,6 @@ def to_binary(decimal_value):
             final_decimals.append(ss)
     result_decimals = ' '.join(final_decimals)
 
-    return print(result_decimals)
+    return result_decimals
 
-to_binary('158.128.1.108')
+# to_binary('128.56.7.91')
