@@ -2,8 +2,30 @@
 # Since these two fits most of the use-case(they are used a lot)
 
 class IpClass:
-    def __init__(self, binary: str=None):
+    def __init__(self, binary: int=None):
         self.binary = binary
+
+    def decimal_class(self, decimal):
+        """ This function takes the first three decimal integers and returns str
+            For example 127: 'A' i.e class A IP Address
+            Since the first three integers are used to indentify the class of an IP Address
+            based on the range of the given IP address.
+        """
+        if type(decimal) != type(int()):
+            raise ValueError
+        else:
+            if decimal >= 0 and decimal <= 127:
+                return print("Class A")
+            elif decimal >= 128 and decimal <= 191:
+                return print("Class B")
+            elif decimal >= 192 and decimal <= 223:
+                return print("Class C")
+            elif decimal >= 224 and decimal <= 239:
+                return print("Class D")
+            elif decimal >= 240 and decimal <= 255:
+                return print("Class E")
+            else:
+                raise ValueError
 
     def bin_class(self, binary):
         """ This function takes the first four binary integers and returns str
@@ -66,4 +88,4 @@ class IpClass:
                 return print(pow(2,28),":6.25% of address space")
 
 x  = IpClass()
-print(x.address_space("1000"))
+print(x.decimal_class(127))
